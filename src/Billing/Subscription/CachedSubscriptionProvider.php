@@ -85,4 +85,13 @@ class CachedSubscriptionProvider implements SubscriptionProviderInterface
 
         return $this->subscriptions[$id];
     }
+
+    public function refresh(Subscription $subscription): Subscription
+    {
+        $key = sprintf(self::REDIS_STORAGE_SUBSCRIPTION_KEY, $subscription->getId());
+        $this->redis->del($key);
+        $this->subscription = [];
+
+        return $this->getSubscription($subscription->getId());
+    }
 }
