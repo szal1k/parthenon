@@ -27,7 +27,7 @@
                 <cascade-remove />
             </cascade>
         </one-to-many>
-        <many-to-many field="features" target-entity="Parthenon\Billing\Entity\SubscriptionFeature" orphan-removal="true">
+        <many-to-many field="features" target-entity="Parthenon\Billing\Entity\SubscriptionFeature" orphan-removal="false">
             <join-table name="subscription_plan_subscription_feature">
                 <join-columns>
                     <join-column name="subscription_plan_id" referenced-column-name="id" />
@@ -41,7 +41,7 @@
                 <cascade-remove />
             </cascade>
         </many-to-many>
-        <many-to-many field="prices" target-entity="Parthenon\Billing\Entity\PriceInterface" orphan-removal="true" >
+        <many-to-many field="prices" target-entity="Parthenon\Billing\Entity\PriceInterface" orphan-removal="false" >
             <join-table name="subscription_plan_price">
                 <join-columns>
                     <join-column name="subscription_plan_id" referenced-column-name="id" />
