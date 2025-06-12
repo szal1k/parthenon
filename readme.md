@@ -49,7 +49,7 @@ To add Parthenon to a pre-existing Symfony application, just run the composer co
 composer require parthenon/parthenon
 ```
 
-Or you can use the [Parthenon Skeleton Application](https://github.com/parthenon/skeleton) that includes a VueJS frontend.
+Or you can use the [Parthenon Skeleton Application](https://github.com/getparthenon/skeleton) that includes a VueJS frontend.
 
 ```sh
 composer create-project parthenon/skeleton
