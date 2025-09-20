@@ -31,6 +31,10 @@ final class MultiTenancyCompilerPass extends AbstractCompilerPass
 {
     public function process(ContainerBuilder $container)
     {
+        if (!$container->hasParameter('parthenon_multi_tenancy_is_enabled')) {
+            return;
+        }
+
         $enabled = $container->getParameter('parthenon_multi_tenancy_is_enabled');
 
         if (!$enabled) {
